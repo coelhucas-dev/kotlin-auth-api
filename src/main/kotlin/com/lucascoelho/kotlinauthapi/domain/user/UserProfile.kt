@@ -7,6 +7,8 @@ import java.util.*
 @Table(name = "user_profile")
 data class UserProfile(
     @Id
+    @Column(name = "user_fk")
+    val userId: UUID,
     @OneToOne
     @JoinColumn(name = "user_fk", referencedColumnName = "id", nullable = false)
     val user: Users,
