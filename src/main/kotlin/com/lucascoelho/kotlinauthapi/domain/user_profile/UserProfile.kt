@@ -1,5 +1,6 @@
-package com.lucascoelho.kotlinauthapi.domain.user
+package com.lucascoelho.kotlinauthapi.domain.user_profile
 
+import com.lucascoelho.kotlinauthapi.domain.user.Users
 import jakarta.persistence.*
 import java.util.*
 
