@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository
 import java.util.UUID
 
 @Repository
-interface UsersRepository: JpaRepository<Users, UUID>
+interface UsersRepository: JpaRepository<Users, UUID> {
+    fun findByLogin(login: String?): Users?
+}
