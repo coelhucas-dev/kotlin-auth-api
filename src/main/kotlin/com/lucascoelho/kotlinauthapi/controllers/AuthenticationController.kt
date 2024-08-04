@@ -1,8 +1,8 @@
 package com.lucascoelho.kotlinauthapi.controllers
 
-import com.lucascoelho.kotlinauthapi.domain.user.LoginRequestDTO
-import com.lucascoelho.kotlinauthapi.domain.user.RegisterRequestDTO
-import com.lucascoelho.kotlinauthapi.domain.user.UserResponseDTO
+import com.lucascoelho.kotlinauthapi.dto.LoginRequestDTO
+import com.lucascoelho.kotlinauthapi.dto.RegisterRequestDTO
+import com.lucascoelho.kotlinauthapi.dto.UserResponseDTO
 import com.lucascoelho.kotlinauthapi.services.AuthenticationService
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

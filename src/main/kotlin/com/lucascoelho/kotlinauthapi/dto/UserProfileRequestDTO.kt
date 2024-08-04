@@ -1,4 +1,4 @@
-package com.lucascoelho.kotlinauthapi.domain.user_profile
+package com.lucascoelho.kotlinauthapi.dto
 
 import java.util.UUID
 

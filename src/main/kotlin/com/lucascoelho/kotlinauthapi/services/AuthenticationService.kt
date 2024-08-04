@@ -1,7 +1,7 @@
 package com.lucascoelho.kotlinauthapi.services
 
-import com.lucascoelho.kotlinauthapi.domain.user.LoginRequestDTO
-import com.lucascoelho.kotlinauthapi.domain.user.RegisterRequestDTO
+import com.lucascoelho.kotlinauthapi.dto.LoginRequestDTO
+import com.lucascoelho.kotlinauthapi.dto.RegisterRequestDTO
 import com.lucascoelho.kotlinauthapi.domain.user.Users
 import com.lucascoelho.kotlinauthapi.infra.security.TokenService
 import com.lucascoelho.kotlinauthapi.repositories.UsersRepository
