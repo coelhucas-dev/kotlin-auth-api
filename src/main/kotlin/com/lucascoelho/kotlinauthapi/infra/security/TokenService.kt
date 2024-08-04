@@ -16,7 +16,7 @@ import java.util.*
 class TokenService {
 
     @Value("api.security.token")
-    private lateinit var secret: String
+    private val secret: String = ""
 
     private val algorithm: Algorithm = Algorithm.HMAC256(secret)
     private val defaultIssuer: String = "kotlin-auth-api"
