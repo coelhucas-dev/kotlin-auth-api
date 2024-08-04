@@ -1,6 +1,7 @@
 package com.lucascoelho.kotlinauthapi.controllers
 
-import com.lucascoelho.kotlinauthapi.domain.user.UserRequestDTO
+import com.lucascoelho.kotlinauthapi.domain.user.LoginRequestDTO
+import com.lucascoelho.kotlinauthapi.domain.user.RegisterRequestDTO
 import com.lucascoelho.kotlinauthapi.domain.user.UserResponseDTO
 import com.lucascoelho.kotlinauthapi.services.AuthenticationService
 import org.slf4j.Logger
@@ -22,7 +23,7 @@ class AuthenticationController(
 
     @PostMapping("/login")
     @ResponseBody
-    fun login(@RequestBody user: UserRequestDTO?): ResponseEntity<UserResponseDTO> {
+    fun login(@RequestBody user: LoginRequestDTO?): ResponseEntity<UserResponseDTO> {
         logger.info("Trying to authenticate user, username=${user?.username}")
 
         try {
@@ -48,15 +49,14 @@ class AuthenticationController(
 
     @PostMapping("/register")
     @ResponseBody
-    fun register(@RequestBody user: UserRequestDTO?): ResponseEntity<UserResponseDTO> {
+    fun register(@RequestBody user: RegisterRequestDTO?): ResponseEntity<UserResponseDTO> {
         logger.info("Trying to create user, username=${user?.username}")
 
         try {
-            val savedUser = this.authenticationService.register(user)
-
+            val savedUser = this.authenticationService.register(user!!)
             val location = URI.create("/users/${savedUser.username}")
-
-            val token = this.authenticationService.login(user)
+            val loginRequest = LoginRequestDTO(user.username, user.password)
+            val token = this.authenticationService.login(loginRequest)
 
             return ResponseEntity.created(location).body(
                 UserResponseDTO(
